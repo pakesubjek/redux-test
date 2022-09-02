@@ -5,12 +5,11 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Table } from "reactstrap";
 
-
 const handleSubmit = async (values, actions) => {
   try {
     const response = await axios ({
       method: "POST",
-      url: "https://bootcamp-rent-car.herokuapp.com/customer/auth/register",
+      url: "https://bootcamp-rent-car.herokuapp.com/customer/auth/login",
       data: values,
     })
     actions.setSubmitting(false);
@@ -47,7 +46,7 @@ const FormikYup = () => {
 
   return (
     <div>
-      <h5>Register</h5>
+      <h5>Login</h5>
 
       <form onSubmit={formik.handleSubmit} method="post">
         <Table>
